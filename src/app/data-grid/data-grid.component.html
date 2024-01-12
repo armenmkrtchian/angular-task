@@ -1,0 +1,48 @@
+<ng-container *ngIf="items?.length; else noItems">
+  <table>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>int</th>
+        <th>float</th>
+        <th>color</th>
+        <th>child</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of items; trackBy: identify">
+          <td>{{ item.id }}</td>
+          <td>{{ item.int }}</td>
+          <td class="elipsis">{{ item.float }}</td>
+          <td>
+            <span [ngStyle]="{ 'background-color': item.color }">
+              {{ item.color }}
+            </span>
+          </td>
+          <td>
+            <table class="child-table">
+              <thead>
+                <tr>
+                  <th>id</th>
+                  <th>color</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{ item.child.id }}</td>
+                  <td>
+                    <span [ngStyle]="{ 'background-color': item.child.color }">
+                      {{ item.child.color }}
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+</ng-container>
+<ng-template #noItems>
+  <span data-testid="no-value"> No data </span>
+</ng-template>

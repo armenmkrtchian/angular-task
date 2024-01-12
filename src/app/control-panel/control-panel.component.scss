@@ -1,0 +1,39 @@
+.form-container {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 1px solid grey;
+    height: 60px;
+
+    .error {
+      font-size: 13px;
+      color: red;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      margin-right: 40px;
+
+      input {
+        text-align: center;
+        background-color: #f7f7f7;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        &[type="number"] {
+          -moz-appearance: textfield;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 800px) {
+    .form-container {
+      flex-direction: column;
+    }
+  }

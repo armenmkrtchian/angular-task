@@ -1,0 +1,41 @@
+thead,
+tbody,
+tr {
+  display: contents;
+}
+
+table {
+  display: grid;
+  border-collapse: collapse;
+  min-width: 100%;
+  grid-template-columns: repeat(5, 1fr);
+
+  th {
+    height: 30px;
+  }
+
+  thead tr th:last-child {
+    width: 10%;
+  }
+
+  tr {
+    border: 3px solid gray;
+
+    td {
+      text-align: center;
+
+      &.elipsis {
+        max-width: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+.child-table {
+  display: grid;
+  border-collapse: collapse;
+  grid-template-columns: repeat(2, 1fr);
+  border: 1px solid grey;
+}
